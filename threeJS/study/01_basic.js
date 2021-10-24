@@ -79,7 +79,20 @@ class App {
       this._scene.add(light);
    }
 
-   
+   _setupModel() {
+      // 파란색 정육면체 mesh를 생성
+      // boxGeometry클래스를 이용해서 객체 생성 (가로, 세로, 깊이)
+      const geometry = new THREE.BoxGeometry(1, 1, 1);
+      // 파란색 box
+      const material = new THREE.MeshPhongMaterial({color: 0x44a88});
+
+      // geometry, material 이용해서 mesh 생성
+      const cube = new THREE.Mesh(geometry, material);
+
+      this._scene.add(cube);
+      // field 정의
+      this._cube = cube;
+   }
 };
 
 
