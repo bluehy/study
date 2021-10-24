@@ -47,7 +47,27 @@ class App {
       // requestAnimationFrame은 적당한 시점에, 최대한 빠르게 method를 호출.
       // bind? : method안에서 사용된 this가 App 클래스의 객체를 가르키도록 하기 위한 코드.
    }
-}
+   
+   _setupCamera() {
+      // 3차원 그래픽을 출력할 영역에 대한 가로와 세로에 대한 크기 얻어오기
+      const width = this._divContainer.clientwidth;
+      const height = this._divContainer.clientheight;
+      
+      // 크기를 이용해 카메라 객체를 생성
+      const camera = new THREE.PerspectiveCamera(
+         75,
+         width / height,
+         0.1,
+         100
+         );
+         
+      // 생성한 카메라 객체를 또 다른 method에서 사용할 수 있도록 field객체로 정의
+      camera.position.z = 2;
+      this._camera = camera;
+   }
+   
+};
+
 
 window.onload = function () {
    new App();
