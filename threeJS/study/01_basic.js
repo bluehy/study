@@ -93,6 +93,19 @@ class App {
       // field 정의
       this._cube = cube;
    }
+
+   resize() {
+      // this._divContainer의 크기 얻어오기
+      const width = this._divContainer.clientwidth;
+      const height = this._divContainer.clientheight;
+
+      // camera의 속성값 설정
+      this._camera.aspect = width / height;
+      this._camera.updateProjectionMatrix();
+
+      // renderer의 크기 설정
+      this._renderer.setSize(width, height);      
+   }
 };
 
 
