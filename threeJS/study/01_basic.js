@@ -66,6 +66,20 @@ class App {
       this._camera = camera;
    }
    
+   _setupLight() {
+      // 광원을 생성하기 위해서는 광원의 색상, 세기 값이 필요.
+      const color = 0xffffff;
+      const intensity = 1;
+      const light = new THREE.DirectionalLight(color, intensity);
+
+      // 광원의 위치 잡기
+      light.position.set(-1, 2, 4);
+
+      // 생성한 광원을 scene객체의 구성요소로 추가
+      this._scene.add(light);
+   }
+
+   
 };
 
 
