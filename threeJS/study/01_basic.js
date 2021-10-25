@@ -89,6 +89,7 @@ class App {
       // geometry, material 이용해서 mesh 생성
       const cube = new THREE.Mesh(geometry, material);
 
+      // scene에 구성요소로 추가
       this._scene.add(cube);
       // field 정의
       this._cube = cube;
