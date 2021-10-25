@@ -106,6 +106,20 @@ class App {
       // renderer의 크기 설정
       this._renderer.setSize(width, height);      
    }
+
+   render(time) {
+      // time인자를 받음, 렌더링이 시작된 이후 경과된 시간값으로 단위는 milli-second
+      // scene을 카메라의 시점으로 렌더링하라는 코드
+      this._renderer.render(this._scene, this._camera);
+
+      // update method, 속성값을 변경함으로써 애니메이션 효과를 발생시킨다.
+      this.update(time);
+      
+      // render method가 반복적으로 호출되도록
+      requestAnimationFrame(this.render.bind(this));
+   }
+
+   
 };
 
 
