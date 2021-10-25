@@ -1,4 +1,4 @@
-import * as THREE from "../build/three.module";
+import * as THREE from "../build/three.module.js";
 
 class App {
    constructor() {
@@ -50,8 +50,8 @@ class App {
    
    _setupCamera() {
       // 3차원 그래픽을 출력할 영역에 대한 가로와 세로에 대한 크기 얻어오기
-      const width = this._divContainer.clientwidth;
-      const height = this._divContainer.clientheight;
+      const width = this._divContainer.clientWidth;
+      const height = this._divContainer.clientHeight;
       
       // 크기를 이용해 카메라 객체를 생성
       const camera = new THREE.PerspectiveCamera(
@@ -96,8 +96,8 @@ class App {
 
    resize() {
       // this._divContainer의 크기 얻어오기
-      const width = this._divContainer.clientwidth;
-      const height = this._divContainer.clientheight;
+      const width = this._divContainer.clientWidth;
+      const height = this._divContainer.clientHeight;
 
       // camera의 속성값 설정
       this._camera.aspect = width / height;
