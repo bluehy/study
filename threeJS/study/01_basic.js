@@ -119,7 +119,13 @@ class App {
       requestAnimationFrame(this.render.bind(this));
    }
 
-   
+   update(time){
+      // milli-second -> second 단위로 변환
+      time *= 0.001; //second unit
+      // 정육면체(cube)의 x,y축에 대한 회전값에 time값을 지정한다.
+      this._cube.rotation.x = time; 
+      this._cube.rotation.y = time; 
+   }
 };
 
 
