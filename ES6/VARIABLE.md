@@ -1,5 +1,5 @@
 # Variable
-ES6 변수의 기본 이론 
+ES6 :: 변수 기본 이론 
 
 ---
 ## Let and Const
