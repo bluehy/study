@@ -24,3 +24,20 @@ console.log(myNameL);
 let myNameL = "Chell";
 console.log(myNameL);
 // Chell
+
+
+// ===========================================
+// Block Scope
+if(true){
+   const hello ="hi";
+}
+
+console.log(hello);
+// ERROR _ hello는 {} 안에서만 존재
+
+if(true){
+   var hi = "hello";
+}
+
+console.log(hi);
+// hello _ var는 block scope가 없고, function scope가 존재. function 안에 있는 경우만 외부에서 접근이 불가능한 형태.
