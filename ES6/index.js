@@ -1,3 +1,4 @@
+// VARIABLE
 const person ={
    name: "dione"
 };
@@ -41,3 +42,22 @@ if(true){
 
 console.log(hi);
 // hello _ var는 block scope가 없고, function scope가 존재. function 안에 있는 경우만 외부에서 접근이 불가능한 형태.
+
+
+// 
+// FUNCTION
+// arrow function
+const names = ['Melchior', 'Aslan', 'Arthur'];
+
+const addHearts = names.map(function(item){
+   return item + "❤";
+})
+console.log(addHearts);
+// ['Melchior❤', 'Aslan❤', 'Arthur❤']
+
+// arrow function 사용하기
+const arrowHearts = names.map((item)=>{
+   return item +"❤"
+});
+console.log(arrowHearts);
+// ['Melchior❤', 'Aslan❤', 'Arthur❤']

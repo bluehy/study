@@ -13,7 +13,7 @@ ES6 :: 변수 기본 이론
 : temporal dead zone. 스코프의 시작 지점부터 초기화 시작 지점까지의 구간.
 
 - 변수선언의 절차
-[변수 선언의 절차](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FCfdPQ%2FbtqFNFCCfWu%2FEBd8c7QUZLSChL2AVVaiyK%2Fimg.jpg)
+![변수 선언의 절차](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FCfdPQ%2FbtqFNFCCfWu%2FEBd8c7QUZLSChL2AVVaiyK%2Fimg.jpg)
 
    : *선언 단계(변수 객체로 등록) -> 초기화 단계(할당된 메모리가 undefined로 초기화)* -> 할당 단계(사용자가 지정한 값을 할당)
 
