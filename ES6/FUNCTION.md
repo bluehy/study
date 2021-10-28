@@ -41,6 +41,9 @@ const Name = () => {};
    const arrowHearts = names.map(item=>{item +"❤"});
    // [undefined, undefined, undefined]
    ```
+---
+## 'this' in Arrow Functions
+: 
 
 
 ---
