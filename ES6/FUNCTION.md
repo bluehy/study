@@ -43,8 +43,31 @@ const Name = () => {};
    ```
 ---
 ## 'this' in Arrow Functions
-: 
+: this키워드를 사용해야하는 경우, arrow function을 쓸 수 없다.
 
+- 이미 사용법이 정해진, 예약된 용어.
+```javascript
+button.addEventListener("click", function(){
+   console.log(this);
+   // this-> HTMLbuttonElement
+   console.log("i have been clicked.");
+   // 클릭할 때마다 i have been clicked.
+});
+```
+- arrow function내에서 this를 사용할 경우, window를 가리킨다. 
+```js
+button.addEventListener("click", function(){
+   console.log(this);
+   // this-> window obj을 표시하게 됨.
+});
+
+const handleClick = () => {
+   console.log(this);
+};
+
+button.addEventListener("click", handleClick);
+// 끌어와서 사용해도 동일한 결과가 출력된다.
+```
 
 ---
 ### 각주
