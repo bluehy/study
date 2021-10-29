@@ -1,8 +1,10 @@
 # Function
+[백링크](./README)
 ES6 :: 함수 기본 이론
 
+
 ---
-## Arrow Function
+## 🔹 Arrow Function
 : 함수의 모습을 개선한 케이스. 대체가 아니라 새로운 형태.
 
 ```javascript
@@ -41,8 +43,10 @@ const Name = () => {};
    const arrowHearts = names.map(item=>{item +"❤"});
    // [undefined, undefined, undefined]
    ```
+
+
 ---
-## 'this' in Arrow Functions
+## 🔹 'this' in Arrow Functions
 : this키워드를 사용해야하는 경우, arrow function을 쓸 수 없다.
 
 - 이미 사용법이 정해진, 예약된 용어.
@@ -69,7 +73,14 @@ button.addEventListener("click", handleClick);
 // 끌어와서 사용해도 동일한 결과가 출력된다.
 ```
 
+
 ---
-### 각주
+## 🔹 Arrow Function in The REAL WORLD
+: 
+
+- 
+
+---
+### 🔸 각주
 ---
 <a name="footnote_1">1</a> : arguments가 하나일 때는 ()를 사용하지 않아도 된다. 아무것도 없는 경우 또는 두개 이상부터는 ()를 사용해야한다.
