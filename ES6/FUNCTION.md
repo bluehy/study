@@ -76,7 +76,12 @@ button.addEventListener("click", handleClick);
 
 ---
 ## 🔹 Arrow Function in The REAL WORLD
-: 
+: array operation.
+
+[array.prototype.find](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+: 제공되는 테스트 조건을 만족(true)하는 ***첫번째*** 엘리먼트 값을 리턴하는 함수.
+
+[array.prototype.]()
 
 - 
 

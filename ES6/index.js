@@ -95,3 +95,22 @@ console.log(nico);
 // arrow function을 사용하였기 때문에 해당 객체가 아니라 window를 가리키게 되면서 함수가 원하는대로 작동되지 않음.
 // addYear(){this.age++;} 로 수정하면 원하는 값을 얻을 수 있다.
 // {age: 26, addYear: f}
+
+
+// ===========================================
+// array operation
+
+const email = [
+   "kleo@gmail.com",
+   "arthur@naver.com",
+   "dione@gmail.com",
+   "chell@naver.com"
+];
+
+const foundMail = email.find(item => true);
+const foundNaver = email.find(item => item.includes("@naver"));
+
+console.log(foundMail);
+// kleo@gmail.com
+console.log(foundNaver);
+// arthur@naver.com
