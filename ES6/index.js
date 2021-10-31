@@ -114,3 +114,9 @@ console.log(foundMail);
 // kleo@gmail.com
 console.log(foundNaver);
 // arthur@naver.com
+
+const noGmail = email.filter(item => !item.includes("@gmail"));
+
+console.log(noGmail);
+// ["arthur@naver.com","chell@naver.com"]
+
