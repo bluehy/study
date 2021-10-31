@@ -84,7 +84,13 @@ button.addEventListener("click", handleClick);
 - [array.prototype.filter](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 : 제공된 함수의 조건을 만족한 모든 엘리먼트로 새로운 array를 만들어서 출력한다.
 
-- [array.prototype.]()
+- [array.prototype.forEach](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+: array의 엘리먼트마다 제공된 함수를 실행한다. 새로운 array를 만들지는 않는다. 실행만 할뿐.
+   - ✔ map 은 forEach하고 반환된 element들로 새로운 array를 만들어준다.
+   -> object로 이루어진 array도 반환할 수 있는데, 이때 implicit return이 깨지기 때문에 {}를 ()로 감싸주면 된다. object를 반환하는 방법이다.
+
+---
+## 
 
 ---
 ### 🔸 각주

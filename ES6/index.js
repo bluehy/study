@@ -120,3 +120,22 @@ const noGmail = email.filter(item => !item.includes("@gmail"));
 console.log(noGmail);
 // ["arthur@naver.com","chell@naver.com"]
 
+const cleaned = [];
+email.forEach(item => {
+   cleaned.push(item.split("@")[0]);
+});
+console.log(cleaned);
+// ["kleo", "arthur", "dione", "chell"]
+
+const cleanedMap = email.map(item => item.split("@")[0]);
+console.log(cleanedMap);
+// ["kleo", "arthur", "dione", "chell"]
+
+const cleanedMap = email.map((item, index) => ({
+   username : item.split("@")[0],
+   index
+}));
+// [{username: kleo, index: 0},{username: arthur, index:1}...]
+
+// ===========================================
+// 
