@@ -90,7 +90,16 @@ button.addEventListener("click", handleClick);
    -> object로 이루어진 array도 반환할 수 있는데, 이때 implicit return이 깨지기 때문에 {}를 ()로 감싸주면 된다. object를 반환하는 방법이다.
 
 ---
-## 
+## DEFAULT VALUE
+: 기본값.
+```js
+function sayHi(aName = "anon"){
+   return "Hello" + aName;
+}
+
+console.log(sayHi());
+```
+- undefined를 방지하고 값이 주어지지 않았을 때 쓰일 값을 지정해둘 수 있다. text, array, object ...value가 될 수 있다면 뭐든 가능하다.
 
 ---
 ### 🔸 각주
