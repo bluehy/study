@@ -138,4 +138,6 @@ const cleanedMap = email.map((item, index) => ({
 // [{username: kleo, index: 0},{username: arthur, index:1}...]
 
 // ===========================================
-// 
+// template literal
+const quote = "Hello" + aName;
+const backtick = `Hello ${aName}`;
