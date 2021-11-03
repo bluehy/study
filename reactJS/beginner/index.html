@@ -1,0 +1,28 @@
+<!-- counting clicks app -->
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+   <title>Only Vanilla JS</title>
+</head>
+<body>
+   <p>Total clicks: 0</p>
+   <button id="btn">Click me</button>
+</body>
+<script>
+   let count = 0;
+   const button = document.getElementById("btn");
+   const counter = document.querySelector("p");
+   function handleClick() {
+      count = count + 1;
+      counter.innerText = `Total clicks: ${count}`;
+   };
+   button.addEventListener("click",handleClick);
+</script>
+</html>
+
+<!-- step
+1. html 작성
+2. js에서 가져오기
+3. event 감지
+4. data 업데이트
+5. html 업데이트 -->
