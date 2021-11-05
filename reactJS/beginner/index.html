@@ -11,7 +11,9 @@
   <!-- react JS의 엔진, element를 만들어주는 일 -->
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
   <!-- react element를 HTML에 두는 역할 -->
-  <script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- JSX 변환을 위해 Babel standalone 이용-->
+  <script type="text/babel">
     // 어려운 방법으로 첫번째 ReactJS element만들기
     // : ReactJS의 방식을 이해하기 위해서
     const root = document.getElementById("root");
@@ -50,5 +52,9 @@
 => reactJS를 통해 유저들에게 보여질 내용을 업데이트 할 수 있다.
 
 * reactJS를 좀더 쉽게 사용하는 방법
-JSX : react.JS extension. js를 확장한 문법.
+[JSX](https://reactjs.org/docs/introducing-jsx.html) 
+: react.JS extension. js를 확장한 문법.
+
+- JSX로 적은 code를 브라우저가 이해할 수 있도록 transform 단계가 필요하다 
+- [Babel(code 변환)](https://babeljs.io/) 사용
  -->
