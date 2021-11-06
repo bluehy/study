@@ -17,29 +17,15 @@
     // 어려운 방법으로 첫번째 ReactJS element만들기
     // : ReactJS의 방식을 이해하기 위해서
     const root = document.getElementById("root");
-
-    // JSX
-    const Title = () => (
-      <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
-        HI, THIS IS TITLE
-      </h3>
-    );
-
-    // JSX
-    const Btn = () => (
-      <button
-        style={{ backgroundColor: "tomato" }}
-        onClick={() => console.log("im clicked")}
-      >
-        Click me
-      </button>
-    );
-
+    let counter = 0;
+    function countUp() {
+      counter = counter + 1;
+    }
     // JSX
     const Container = () => (
       <div>
-        <Title />
-        <Btn />
+        <h3>TOTAL CLICKS: {counter}</h3>
+        <button onClick={countUp}>Click me</button>
       </div>
     );
 
