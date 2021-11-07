@@ -20,6 +20,9 @@
     let counter = 0;
     function countUp() {
       counter = counter + 1;
+      Render();
+    }
+    function Render() {
       ReactDOM.render(<Container />, root);
     }
     // JSX
@@ -31,7 +34,7 @@
     );
 
     // JSX
-    ReactDOM.render(<Container />, root);
+    Render();
     // ReactDOM.render(elem, where);
   </script>
 </html>
