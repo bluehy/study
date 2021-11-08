@@ -20,12 +20,14 @@
 
     // JSX
     const App = () => {
-      const data = React.useState(0);
+      const [counter, modifier] = React.useState(0);
       console.log(data);
       // [undefined, f] 는 [data, f:data의 값을 바꿀 수 있는 함수] 와 같다.
       // 초기값 0을 넣으면 [0,f]로 출력된다.
-      const counter = data[0];
-      const modifier = data[1];
+      // const counter = data[0];
+      // const modifier = data[1];
+      // const [counter, modifier] = data;
+      // 변수 배열을 통해 바로 받아올 수 있다. (state의 첫번째 단계)
       return (
         <div>
           <h3>TOTAL CLICKS: {counter}</h3>
