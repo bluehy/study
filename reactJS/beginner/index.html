@@ -17,24 +17,25 @@
     // 어려운 방법으로 첫번째 ReactJS element만들기
     // : ReactJS의 방식을 이해하기 위해서
     const root = document.getElementById("root");
-    let counter = 0;
-    function countUp() {
-      counter = counter + 1;
-      Render();
-    }
-    function Render() {
-      ReactDOM.render(<Container />, root);
-    }
-    // JSX
-    const Container = () => (
-      <div>
-        <h3>TOTAL CLICKS: {counter}</h3>
-        <button onClick={countUp}>Click me</button>
-      </div>
-    );
 
     // JSX
-    Render();
+    const App = () => {
+      const data = React.useState(0);
+      console.log(data);
+      // [undefined, f] 는 [data, f:data의 값을 바꿀 수 있는 함수] 와 같다.
+      // 초기값 0을 넣으면 [0,f]로 출력된다.
+      const counter = data[0];
+      const modifier = data[1];
+      return (
+        <div>
+          <h3>TOTAL CLICKS: {counter}</h3>
+          <button>Click me</button>
+        </div>
+      );
+    };
+
+    // JSX
+    ReactDOM.render(<App />, root);
     // ReactDOM.render(elem, where);
   </script>
 </html>
@@ -57,4 +58,10 @@
 - [Babel(code 변환)](https://babeljs.io/) 사용
 - JSX에서 개인이 만든 모든 Component는 대문자로 시작해야한다.
 - 컴포넌트를 다른 컴포넌트 안에 넣어 사용한다(함수화)
+
+- ReactJs는 UI에서 바뀐 부분만 업데이트를 해준다.
+: 이전에 렌더링된 컴포넌트를 확인하고, 달라진 부분만을 파악해 업데이트 해준다.
+
+ReactJS의 re-render 기능
+
  -->
