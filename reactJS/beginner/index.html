@@ -21,17 +21,23 @@
     // JSX
     const App = () => {
       const [counter, modifier] = React.useState(0);
-      console.log(data);
+      // console.log(data);
       // [undefined, f] 는 [data, f:data의 값을 바꿀 수 있는 함수] 와 같다.
       // 초기값 0을 넣으면 [0,f]로 출력된다.
       // const counter = data[0];
       // const modifier = data[1];
       // const [counter, modifier] = data;
       // 변수 배열을 통해 바로 받아올 수 있다. (state의 첫번째 단계)
+      const onClick = () => {
+        modifier(9898987);
+        // 받은 값으로 바로 counter를 업데이트한다.
+        // *다시 component를 render하지 않아도 자동으로 render해준다.
+      };
       return (
+        // component
         <div>
           <h3>TOTAL CLICKS: {counter}</h3>
-          <button>Click me</button>
+          <button onClick={onClick}>Click me</button>
         </div>
       );
     };
