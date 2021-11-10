@@ -20,27 +20,10 @@
 
     // JSX
     const App = () => {
-      const [counter, setCounter] = React.useState(0);
-      // console.log(data);
-      // [undefined, f] 는 [data, f:data의 값을 바꿀 수 있는 함수] 와 같다.
-      // 초기값 0을 넣으면 [0,f]로 출력된다.
-      // const counter = data[0];
-      // const modifier = data[1];
-      // const [counter, modifier] = data;
-      // 변수 배열을 통해 바로 받아올 수 있다. (state의 첫번째 단계)
-      const onClick = () => {
-        // setCounter(counter + 1);
-        // 받은 값으로 바로 counter를 업데이트한다.
-        // *다시 component를 render하지 않아도 자동으로 render해준다.
-        setCounter((current) => current + 1);
-        // 함수를 이용하여 현재 state를 사용하는 방법.
-        // 현재는 같은 결과가 나오지만, 현재 값에서 코드가 엉키는 걸 방지하기 좋은 안전한 방법.
-      };
       return (
         // component
         <div>
-          <h3>TOTAL CLICKS: {counter}</h3>
-          <button onClick={onClick}>Click me</button>
+          <h1>Super Converter</h1>
         </div>
       );
     };
@@ -50,33 +33,3 @@
     // ReactDOM.render(elem, where);
   </script>
 </html>
-
-<!-- 
-   step
-1. react, react-dom 설치 (React import,)
-2. react JS element 생성
-   : reactJS의 규칙 - HTML을 페이지에 직접 작성하지 않는다.
-3. 기본 html이 되어줄 root작성
-4. ReactDOM을 이용해 reactJS element를 html에 작성
-* react element에 property, content 작성
-=> reactJS를 통해 유저들에게 보여질 내용을 업데이트 할 수 있다.
-
-* reactJS를 좀더 쉽게 사용하는 방법
-[JSX](https://reactjs.org/docs/introducing-jsx.html) 
-: react.JS extension. js를 확장한 문법.
-
-- JSX로 적은 code를 브라우저가 이해할 수 있도록 transform 단계가 필요하다 
-- [Babel(code 변환)](https://babeljs.io/) 사용
-- JSX에서 개인이 만든 모든 Component는 대문자로 시작해야한다.
-- 컴포넌트를 다른 컴포넌트 안에 넣어 사용한다(함수화)
-
-- ReactJs는 UI에서 바뀐 부분만 업데이트를 해준다.
-: 이전에 렌더링된 컴포넌트를 확인하고, 달라진 부분만을 파악해 업데이트 해준다.
-
-ReactJS의 re-render 기능
-:useState의 setState를 사용하여 자동으로 렌더링을 유도한다. 
-data가 변경될 때마다 전체 component를 재생성하여 새롭게 다시 렌더링해주는 원리. 
-* 전부 새로 교체되는 게 아니라 변경된 state를 추적해 해당 data가 포함된 부분만 변화한다.
-  1. state가 변경되면, component의 리렌더링이 일어난다.
-  2. 리렌더링이 일어날 때 이벤트리스너가 두개가 되거나 하지 않고 변경된 state부분만 달라지게 된다.
- -->
