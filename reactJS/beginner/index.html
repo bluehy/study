@@ -21,8 +21,10 @@
     // JSX
     const App = () => {
       const [minutes, setMinutes] = React.useState();
-      const onChange = () => {
-        console.log("wrote");
+      const onChange = (event) => {
+        // console.log("wrote");
+        console.log(event.target.value);
+        setMinutes(event.target.value);
       };
       return (
         // component
@@ -36,6 +38,7 @@
             type="number"
             onChange={onChange}
           />
+          <p>You want to convert : {minutes} min</p>
           <label htmlFor="hours">Hours</label>
           <input id="hours" placeholder="Hours" type="number" />
         </div>
@@ -50,4 +53,7 @@
 
 <!-- 
   JSX에서는 class, for 등의 기능이 이미 선점되어있기 때문에 html에서 사용하듯이 사용할 수 없다. className, htmlFor과 같이 변경해야한다.
+
+  React JS로도 event arg 사용가능.
+  target: 방금 바뀐 input을 의미. (value 포함)
  -->
