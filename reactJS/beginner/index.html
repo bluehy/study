@@ -26,6 +26,7 @@
         console.log(event.target.value);
         setMinutes(event.target.value);
       };
+      const reset = () => setMinutes(0);
       return (
         // component
         <div>
@@ -43,12 +44,14 @@
           <div>
             <label htmlFor="hours">Hours</label>
             <input
-              value={minutes / 60}
+              value={Math.round(minutes / 60)}
               id="hours"
               placeholder="Hours"
               type="number"
+              disabled
             />
           </div>
+          <button onClick={reset}>Reset</button>
         </div>
       );
     };
