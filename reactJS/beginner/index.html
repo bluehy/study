@@ -31,16 +31,24 @@
         <div>
           <h1 className="converter">Converter</h1>
           <label htmlFor="minutes">Minutes</label>
-          <input
-            value={minutes}
-            id="minutes"
-            placeholder="Minutes"
-            type="number"
-            onChange={onChange}
-          />
-          <p>You want to convert : {minutes} min</p>
-          <label htmlFor="hours">Hours</label>
-          <input id="hours" placeholder="Hours" type="number" />
+          <div>
+            <input
+              value={minutes}
+              id="minutes"
+              placeholder="Minutes"
+              type="number"
+              onChange={onChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="hours">Hours</label>
+            <input
+              value={minutes / 60}
+              id="hours"
+              placeholder="Hours"
+              type="number"
+            />
+          </div>
         </div>
       );
     };
