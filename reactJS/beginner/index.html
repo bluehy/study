@@ -41,6 +41,7 @@
               placeholder="Minutes"
               type="number"
               onChange={onChange}
+              disabled={flipped === true}
             />
           </div>
           <div>
@@ -54,7 +55,7 @@
             />
           </div>
           <button onClick={reset}>Reset</button>
-          <button onClick={onFlip}>Flipped</button>
+          <button onClick={onFlip}>Flip</button>
         </div>
       );
     };
