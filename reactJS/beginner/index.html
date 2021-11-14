@@ -21,12 +21,14 @@
     // JSX
     const App = () => {
       const [minutes, setMinutes] = React.useState(0);
+      const [flipped, setFlipped] = React.useState(false);
       const onChange = (event) => {
         // console.log("wrote");
         console.log(event.target.value);
         setMinutes(event.target.value);
       };
       const reset = () => setMinutes(0);
+      const onFlip = () => setFlipped((current) => !current);
       return (
         // component
         <div>
@@ -52,6 +54,7 @@
             />
           </div>
           <button onClick={reset}>Reset</button>
+          <button onClick={onFlip}>Flipped</button>
         </div>
       );
     };
