@@ -64,12 +64,18 @@
         </div>
       );
     };
-
+    const KmToMiles = () => {
+      return <h3>KM to Miles</h3>;
+    };
     const App = () => {
+      const [index, setIndex] = React.useState(0);
       return (
         <div>
           <h1 className="converter">Converter</h1>
-          <MinutesToHounrs />
+          <select>
+            <option value="0">Minutes & Hours</option>
+            <option value="1">Km & Miles</option>
+          </select>
         </div>
       );
     };
