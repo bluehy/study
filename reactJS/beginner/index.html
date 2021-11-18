@@ -14,9 +14,45 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!-- JSX 변환을 위해 Babel standalone 이용-->
   <script type="text/babel">
+    const SaveBtn = () => {
+      return (
+        <button
+          style={{
+            backgroundColor: "tomato",
+            color: "#fff",
+            padding: "10px",
+            border: 0,
+            borderRadius: "5px",
+          }}
+        >
+          Save
+        </button>
+      );
+    };
+    const ConfirmBtn = () => {
+      return (
+        <button
+          style={{
+            backgroundColor: "tomato",
+            color: "#fff",
+            padding: "10px",
+            border: 0,
+            borderRadius: "5px",
+          }}
+        >
+          Confirm
+        </button>
+      );
+    };
     // parent component
     const App = () => {
-      return <div></div>;
+      return (
+        // JSX
+        <div>
+          <SaveBtn />
+          <ConfirmBtn />
+        </div>
+      );
     };
 
     const root = document.getElementById("root");
