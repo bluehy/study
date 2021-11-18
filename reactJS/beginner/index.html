@@ -14,7 +14,10 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!-- JSX 변환을 위해 Babel standalone 이용-->
   <script type="text/babel">
-    const SaveBtn = () => {
+    const Btn = ({ myText, x }) => {
+      // props 대신 {myText}로 대체 가능. 오브젝트에서 바로 인자를 받아낸다.
+      // console.log(props);
+      // object
       return (
         <button
           style={{
@@ -23,24 +26,11 @@
             padding: "10px",
             border: 0,
             borderRadius: "5px",
+            cursor: "pointer",
+            fontSize: x ? 18 : 14,
           }}
         >
-          Save
-        </button>
-      );
-    };
-    const ConfirmBtn = () => {
-      return (
-        <button
-          style={{
-            backgroundColor: "tomato",
-            color: "#fff",
-            padding: "10px",
-            border: 0,
-            borderRadius: "5px",
-          }}
-        >
-          Confirm
+          {myText}
         </button>
       );
     };
@@ -49,9 +39,10 @@
       return (
         // JSX
         <div>
-          <SaveBtn />
-          <ConfirmBtn />
+          <Btn myText="Save" x={true} />
+          <Btn myText="Continue" y={7} />
         </div>
+        // Btn({myText:"Continue"})
       );
     };
 
@@ -63,4 +54,6 @@
 <!-- 
   # Props
   부모 컴포넌트로부터 자식 컴포넌트로 data를 보낼 때 사용할 수 있다.
+  component에서 사용할 수 있는 arg로, 이 인자의 이름을 props라고 부른다.
+  component의 properties.
  -->
