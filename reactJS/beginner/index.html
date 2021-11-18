@@ -14,145 +14,17 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!-- JSX 변환을 위해 Babel standalone 이용-->
   <script type="text/babel">
-    // 어려운 방법으로 첫번째 ReactJS element만들기
-    // : ReactJS의 방식을 이해하기 위해서
-    const root = document.getElementById("root");
-
-    // JSX
-    // child component
-    const MinutesToHounrs = () => {
-      const [amount, setAmount] = React.useState(0);
-      const [inverted, setInverted] = React.useState(false);
-      const onChange = (event) => {
-        // console.log("wrote");
-        console.log(event.target.value);
-        setAmount(event.target.value);
-      };
-      const reset = () => setAmount(0);
-      const onFlip = () => {
-        reset();
-        setInverted((current) => !current);
-      };
-      return (
-        // component
-        <div>
-          <div>
-            <label htmlFor="minutes">Minutes</label>
-            <input
-              value={inverted ? amount * 60 : amount}
-              id="minutes"
-              placeholder="Minutes"
-              type="number"
-              onChange={onChange}
-              // disabled={inverted === true}
-              disabled={inverted}
-            />
-          </div>
-          <div>
-            <label htmlFor="hours">Hours</label>
-            <input
-              value={inverted ? amount : Math.round(amount / 60)}
-              id="hours"
-              placeholder="Hours"
-              type="number"
-              onChange={onChange}
-              // disabled={inverted === false}
-              disabled={!inverted}
-            />
-          </div>
-          <button onClick={reset}>Reset</button>
-          <button onClick={onFlip}>{inverted ? "Turn back" : "invert"}</button>
-        </div>
-      );
-    };
-    const KmToMiles = () => {
-      const [distance, setDistance] = React.useState();
-      const onChange = (event) => {
-        setDistance(event.target.value);
-      };
-      const reset = () => {
-        setDistance(0);
-      };
-      const [inverted, setInverted] = React.useState(true);
-      const onInverted = () => {
-        setInverted(!inverted);
-        console.log(inverted);
-      };
-      return (
-        <div>
-          <h3>KM to Miles</h3>
-          <div>
-            <label htmlFor="Km">Km</label>
-            <input
-              value={inverted ? distance : distance * 1.60934}
-              id="km"
-              placeholder="km"
-              type="number"
-              onChange={onChange}
-              disabled={!inverted}
-            />
-            <span>km</span>
-          </div>
-          <div>
-            <label htmlFor="miles">Miles</label>
-            <input
-              value={inverted ? distance * 0.621371 : distance}
-              id="miles"
-              placeholder="miles"
-              type="number"
-              onChange={onChange}
-              disabled={inverted}
-            />
-            <span>miles</span>
-          </div>
-          <button onClick={reset}>Reset</button>
-          <button onClick={onInverted}>
-            {inverted ? "Mi 2 Km" : "Km 2 Mi"}
-          </button>
-        </div>
-      );
-    };
-
     // parent component
     const App = () => {
-      const [index, setIndex] = React.useState("-");
-      const onSelect = () => {
-        setIndex(event.target.value);
-      };
-      return (
-        <div>
-          <h1 className="converter">Converter</h1>
-          <select value={index} onChange={onSelect}>
-            <option value="-">Select your units</option>
-            <option value="0">Minutes & Hours</option>
-            <option value="1">Km & Miles</option>
-          </select>
-          <hr />
-          {index === "0" ? (
-            <MinutesToHounrs />
-          ) : index === "1" ? (
-            <KmToMiles />
-          ) : (
-            "Please select your units"
-          )}
-        </div>
-      );
+      return <div></div>;
     };
 
-    // JSX
+    const root = document.getElementById("root");
     ReactDOM.render(<App />, root);
-    // ReactDOM.render(elem, where);
   </script>
 </html>
 
 <!-- 
-  JSX에서는 class, for 등의 기능이 이미 선점되어있기 때문에 html에서 사용하듯이 사용할 수 없다. className, htmlFor과 같이 변경해야한다.
-
-  React JS로도 event arg 사용가능.
-  target: 방금 바뀐 input을 의미. (value 포함)
-
-  - JSX 사용시 return 문을 사용할 때는 최상위 태그가 있어야 한다.(react Fragments 참고)
-
   # Props
   부모 컴포넌트로부터 자식 컴포넌트로 data를 보낼 때 사용할 수 있다.
  -->
