@@ -14,14 +14,9 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!-- JSX 변환을 위해 Babel standalone 이용-->
   <script type="text/babel">
-    const Btn = ({ myText, onClick }) => {
-      // props 대신 {myText}로 대체 가능. 오브젝트에서 바로 인자를 받아낸다.
-      // console.log(props);
-      // object
-      console.log(myText, "was rendered");
+    const Btn = ({ myText }) => {
       return (
         <button
-          onClick={onClick}
           style={{
             backgroundColor: "tomato",
             color: "#fff",
@@ -35,23 +30,18 @@
         </button>
       );
     };
-    const MemorizedBtn = React.memo(Btn);
+
     // parent component
     const App = () => {
-      const [value, setValue] = React.useState("Save");
-      const changeValue = () => {
-        setValue("Revert Changes");
-      };
       return (
         // JSX
         <div>
-          <MemorizedBtn myText={value} onClick={changeValue} />
-          <MemorizedBtn myText="Continue" />
+          <Btn myText="Save" />
         </div>
-        // Btn({myText:"Continue"})
       );
     };
 
+    // render
     const root = document.getElementById("root");
     ReactDOM.render(<App />, root);
   </script>
