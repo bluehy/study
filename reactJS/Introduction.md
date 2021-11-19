@@ -36,11 +36,11 @@ npm start
 index.js에서 3가지 import(React, ReactDOM, App)와 ReactDOM.render 제외하고 다 지우기
 App.js에서 css, logo 제거. <div> 내용 정리.
 
-App.test.js
-App.css
-index.css
-logo.svg
-reportWebVitals.js
-setupTests.js
-
+- App.test.js
+- App.css
+- index.css
+- logo.svg
+- reportWebVitals.js
+- setupTests.js
+파일 제거
 <!-- 필요시 남겨놓을 수도 있으나, 기본 초기 상태를 지원하는 용도. -->
