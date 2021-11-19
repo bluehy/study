@@ -15,7 +15,7 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!-- JSX 변환을 위해 Babel standalone 이용-->
   <script type="text/babel">
-    const Btn = ({ myText, fontSize }) => {
+    const Btn = ({ myText, fontSize = 12 }) => {
       return (
         <button
           style={{
@@ -37,7 +37,7 @@
     // PropTypes
     Btn.propTypes = {
       // propName: PropTypes.type,
-      myText: PropTypes.string,
+      myText: PropTypes.string.isRequired,
       fontSize: PropTypes.number,
     };
 
@@ -47,7 +47,7 @@
         // JSX
         <div>
           <Btn myText="Save" fontSize={18} />
-          <Btn myText="Continue" fontSize={14} />
+          <Btn myText="Continue" />
         </div>
       );
     };
