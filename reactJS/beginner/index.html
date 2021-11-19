@@ -18,6 +18,7 @@
       // props 대신 {myText}로 대체 가능. 오브젝트에서 바로 인자를 받아낸다.
       // console.log(props);
       // object
+      console.log(myText, "was rendered");
       return (
         <button
           onClick={onClick}
@@ -34,6 +35,7 @@
         </button>
       );
     };
+    const MemorizedBtn = React.memo(Btn);
     // parent component
     const App = () => {
       const [value, setValue] = React.useState("Save");
@@ -43,8 +45,8 @@
       return (
         // JSX
         <div>
-          <Btn myText={value} onClick={changeValue} />
-          <Btn myText="Continue" />
+          <MemorizedBtn myText={value} onClick={changeValue} />
+          <MemorizedBtn myText="Continue" />
         </div>
         // Btn({myText:"Continue"})
       );
@@ -65,4 +67,8 @@
   : <Btn myText={value} onClick={changeValue} />
   같은 예로 style도 적용되지 않는다. 부모 컴포넌트에서는 단순히 prop을 전달해줄 뿐이다. 대신, 자식 컴포넌트에서 해당 prop을 받아와서 이벤트나 스타일에 사용한다면 가능하다.
   커스텀된 prop은 원하는 위치에 직접 넣어야만 한다. 
+
+  부모의 상태(state)가 변화하면, re-render발생.
+  * Memo: 변하지 않는 파트를 re-render하지 않게 하는 기능.
+  -> 변하는 state에 영향을 받지 않는 부분은 다시 렌더링되지 않는다.
 -->
