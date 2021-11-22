@@ -45,7 +45,11 @@ App.js에서 css, logo 제거. <div> 내용 정리.
 파일 제거
 <!-- 필요시 남겨놓을 수도 있으나, 기본 초기 상태를 지원하는 용도. -->
 
+---
+
 ## PropTypes
+
+CRA 폴더에서 prop-types설치
 
 ```
 npm i prop-types
@@ -54,3 +58,12 @@ npm i prop-types
 
 ⭐.s파일에서 import
 import PropTypes from "prop-types";
+
+---
+
+## CRA 활용 중 CSS 사용의 두가지 선택지
+
+1. styles.css 등의 일반적인 css파일을 사용하여 css 지정
+   : index.js에서의 import가 필수
+
+2.
