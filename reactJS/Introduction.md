@@ -61,9 +61,13 @@ import PropTypes from "prop-types";
 
 ---
 
-## CRA 활용 중 CSS 사용의 두가지 선택지
+## CRA 활용 중 CSS 사용법
 
-1. styles.css 등의 일반적인 css파일을 사용하여 css 지정
-   : index.js에서의 import가 필수
+1. styles.css 등의 일반적인 css파일을 사용하여 style 지정
+   : index.js에서의 import가 필수 (전역 css style)
 
-2.
+2. js 내에서 style 지정
+   : componrent 내에서 style을 지정 (로컬 css style)
+
+3. CSS module
+   :
