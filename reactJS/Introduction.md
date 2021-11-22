@@ -44,3 +44,13 @@ App.js에서 css, logo 제거. <div> 내용 정리.
 - setupTests.js
 파일 제거
 <!-- 필요시 남겨놓을 수도 있으나, 기본 초기 상태를 지원하는 용도. -->
+
+## PropTypes
+
+```
+npm i prop-types
+
+```
+
+⭐.s파일에서 import
+import PropTypes from "prop-types";
