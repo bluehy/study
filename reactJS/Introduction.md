@@ -70,4 +70,5 @@ import PropTypes from "prop-types";
    : componrent 내에서 style을 지정 (로컬 css style)
 
 3. CSS module
-   : module.css를 사용, className을 이용한 style 지정
+   : module.css를 사용, className을 이용한 style 지정.
+   실제 클래스명이 html내에서 랜덤하게 정해지고, 원하는 요소에만 style이 독립적으로 적용된다.
