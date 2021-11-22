@@ -70,3 +70,4 @@ import PropTypes from "prop-types";
    : componrent 내에서 style을 지정 (로컬 css style)
 
 3. CSS module
+   : module.css를 사용, className을 이용한 style 지정
