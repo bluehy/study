@@ -6,10 +6,10 @@
 
 [베이직](https://nomadcoders.co/react-for-beginners/lobby)
 
-- [ ] Basic part
-- [ ] STATE
-- [ ] PROPS
-- [ ] CRA_Create React App
+- [x] Basic part
+- [x] STATE
+- [x] PROPS
+- [x] CRA_Create React App
 - [ ] EFFECTS
 
 [마스터](https://nomadcoders.co/react-masterclass/lobby)

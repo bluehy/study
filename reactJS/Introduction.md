@@ -47,7 +47,7 @@ App.js에서 css, logo 제거. <div> 내용 정리.
 
 ---
 
-## PropTypes
+## ⭐PropTypes⭐
 
 CRA 폴더에서 prop-types설치
 
@@ -72,3 +72,11 @@ import PropTypes from "prop-types";
 3. CSS module
    : module.css를 사용, className을 이용한 style 지정.
    실제 클래스명이 html내에서 랜덤하게 정해지고, 원하는 요소에만 style이 독립적으로 적용된다.
+
+---
+
+## ⭐Effect⭐
+
+React App에서는 기본적으로 state가 변화하면 render가 다시 발생한다.
+하지만 component가 처음 render되었을 때만 코드가 실행되기를 원할 수 있음.
+그 경우를 위한 기능이 useEffect
