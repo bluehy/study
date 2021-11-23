@@ -80,3 +80,5 @@ import PropTypes from "prop-types";
 React App에서는 기본적으로 state가 변화하면 render가 다시 발생한다.
 하지만 component가 처음 render되었을 때만 코드가 실행되기를 원할 수 있음.
 그 경우를 위한 기능이 useEffect
+
+- ex) API를 호출하는 경우, API를 통해 data를 반복적으로 받아오는 건 비효율적이기 때문.
