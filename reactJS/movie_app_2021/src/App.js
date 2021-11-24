@@ -13,6 +13,8 @@ function App() {
   const onChange = (event) => {
     setKeyword(event.target.value);
   }
+  useEffect(()=>{console.log("Search for...",keyword)},[keyword]);
+  // keyword가 변화할 때만 기능하도록. deps에 지정된 변수를 react가 watch
   return (
     <div>
       <input value={keyword} onChange={onChange} type="text" placeholder="Search here..." />
