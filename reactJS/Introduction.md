@@ -86,3 +86,6 @@ React App에서는 기본적으로 state가 변화하면 render가 다시 발생
 ```
 useEffect(effectCallback, [dependencyList])
 ```
+
+- effectCallback : Effect가 실행할 function
+- dependencyList : Effect가 실행되는 조건. (ex. state, value...)
