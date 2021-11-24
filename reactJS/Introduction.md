@@ -88,4 +88,4 @@ useEffect(effectCallback, [dependencyList])
 ```
 
 - effectCallback : Effect가 실행할 function
-- dependencyList : Effect가 실행되는 조건. (ex. state, value...)
+- dependencyList : Effect가 실행되는 조건. (ex. state, value...) 여러개를 지정할 수 있다.
