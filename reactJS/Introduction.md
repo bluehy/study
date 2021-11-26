@@ -89,6 +89,7 @@ useEffect(effectCallback, [dependencyList])
 
 - effectCallback
   : Effect가 실행할 function.
+  (Imperative function that can return a cleanup function.)
 - dependencyList
   : Effect가 실행되는 조건. (ex. state, component의 data, value...) 여러개를 지정할 수 있다.
   (if present, effect will only activate if the values in the list change.)

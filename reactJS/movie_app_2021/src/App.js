@@ -23,11 +23,24 @@ function App() {
   useEffect(()=>{
     console.log("I run when 'keyword & counter' changes.");
   }, [keyword, counter]);
+
+  // cleanup
+  const Hello = () => {
+    useEffect(()=>{
+      console.log("created :)");
+      return () => console.log("destroyed :(")
+    },[])
+    return <h1>Hello</h1>
+  }
+  const [showing, setShowing] = useState(false);
+  const onHiding = () => setShowing(prev => !prev);
   return (
     <div>
       <input value={keyword} onChange={onChange} type="text" placeholder="Search here..." />
       <h1 className={styles.title}>{counter}</h1>
       <Button text="Click me" onClick={onClick}>Click me</Button>
+      <button onClick={onHiding}>{showing? "Hide" : "Show"}</button>
+      {showing ? <Hello /> : null}
     </div>
   );
 }
