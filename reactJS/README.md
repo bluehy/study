@@ -10,7 +10,7 @@
 - [x] STATE
 - [x] PROPS
 - [x] CRA_Create React App
-- [ ] EFFECTS
+- [x] EFFECTS
 
 [마스터](https://nomadcoders.co/react-masterclass/lobby)
 
