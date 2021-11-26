@@ -93,3 +93,6 @@ useEffect(effectCallback, [dependencyList])
 - dependencyList
   : Effect가 실행되는 조건. (ex. state, component의 data, value...) 여러개를 지정할 수 있다.
   (if present, effect will only activate if the values in the list change.)
+
+⭐Cleanup Function
+: useEffect로 실행된 component가 파괴될 때 실행되는 함수. (자주 쓰이지는 않지만, 알아둘 필요가 있다.)
