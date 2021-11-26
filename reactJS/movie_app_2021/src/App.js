@@ -26,10 +26,14 @@ function App() {
 
   // cleanup
   const Hello = () => {
-    useEffect(()=>{
+    const byeFn = () => {
+      console.log("destroyed :(");
+    }
+    const hiFn = () => {
       console.log("created :)");
-      return () => console.log("destroyed :(")
-    },[])
+      return byeFn;
+    }
+    useEffect(hiFn,[]);
     return <h1>Hello</h1>
   }
   const [showing, setShowing] = useState(false);
