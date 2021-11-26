@@ -26,15 +26,10 @@ function App() {
 
   // cleanup
   const Hello = () => {
-    const byeFn = () => {
-      console.log("bye :(");
-    }
-    const hiFn = () => {
-      console.log("created :)");
-      return byeFn;
-      // return ~ : component가 파괴될 때 코드를 실행한다. (자주 사용되지는 않음.)
-    }
-    useEffect(hiFn,[]);
+    useEffect(()=>{
+      console.log("hi :)");
+      return () => console.log("bye :(");
+    },[]);
     return <h1>Hello</h1>
   }
   const [showing, setShowing] = useState(false);
