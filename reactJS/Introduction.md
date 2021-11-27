@@ -1,7 +1,7 @@
 # Introduction
 
 ```
-node-v
+node -v
 
 npx
 
@@ -56,7 +56,7 @@ npm i prop-types
 
 ```
 
-⭐.s파일에서 import
+⭐.js파일에서 import
 import PropTypes from "prop-types";
 
 ---
