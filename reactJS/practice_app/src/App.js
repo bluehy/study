@@ -4,18 +4,22 @@ function App() {
   let today = new Date();
   let year = today.getFullYear();
   let month = today.getMonth() + 1;
-
   const [toDo, setToDO] = useState("");
-  const onChange = (event) => setToDO(event.target.value);
+  const [list, setList] = useState([]);
 
+  const onChange = (event) => setToDO(event.target.value);
   const onSubmit = (event) => {
     event.preventDefault();
     if (toDo === "") {
       return;
     }
     setToDO("");
+    setList((prevArr) => [toDo, ...prevArr]);
+    // not [toDo, prevArr]
   };
+  // console.log(list);
 
+  // render
   return (
     <div>
       <h1>
