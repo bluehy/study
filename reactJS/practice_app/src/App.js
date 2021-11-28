@@ -27,6 +27,7 @@ function App() {
       <h1>
         {year}년 {month}월
       </h1>
+      <p>오늘의 할 일 갯수 : {list.length}</p>
       <form onSubmit={onSubmit}>
         <input
           onChange={onChange}
