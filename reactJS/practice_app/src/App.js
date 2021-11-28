@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   let today = new Date();
@@ -17,7 +17,9 @@ function App() {
     setList((prevArr) => [toDo, ...prevArr]);
     // not [toDo, prevArr]
   };
-  // console.log(list);
+  useEffect(() => {
+    console.log(list);
+  }, [list]);
 
   // render
   return (
