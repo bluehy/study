@@ -38,8 +38,8 @@ function App() {
         <button>추가</button>
       </form>
       <ul>
-        {list.map((item) => (
-          <li>
+        {list.map((item, index) => (
+          <li key={index}>
             <button>🔘</button>
             {item}
           </li>
