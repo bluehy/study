@@ -39,7 +39,11 @@ function App() {
       </form>
       <ul>
         {list.map((item) => (
-          <li>{item}</li>
+          <li>
+            <button>🔘</button>
+            {item}
+          </li>
+          // Each child in a list should have a unique "key" prop.
         ))}
       </ul>
     </div>
