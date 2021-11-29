@@ -36,8 +36,12 @@ function App() {
           placeholder="할 일"
         />
         <button>추가</button>
-        <ul></ul>
       </form>
+      <ul>
+        {list.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
