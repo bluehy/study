@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>The Coins! ({coins.length})</h1>
+      <h1>The Coins! {loading ? "" : `(${coins.length})`}</h1>
       {loading ? (
         <h2>Loading...</h2>
       ) : (
