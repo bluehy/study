@@ -19,10 +19,19 @@ function App() {
 
   const onSelect = (event) => {
     const val = event.target.value;
-    const start = val.indexOf("$");
-    const end = val.length;
-    const coinValue = Math.abs(val.substring(start + 1, end));
-    setSelected(coinValue);
+    console.log(val);
+    coins.forEach((item) => {
+      if (item.name === val) {
+        setSelected(item.quotes.USD.price);
+        console.log(selected);
+      } else {
+        return;
+      }
+    });
+    // const start = val.indexOf("$");
+    // const end = val.length;
+    // const coinValue = Math.abs(val.substring(start + 1, end));
+    // setSelected(coinValue);
     // https://mylko72.gitbooks.io/javascript-cookbook/content/chapter1/chapter1_2.html
     // setSelected(event.quotes.USD.price);
   };
@@ -42,7 +51,8 @@ function App() {
           <select onChange={onSelect}>
             {coins.map((item) => (
               <option key={item.id}>
-                {item.name} ({item.symbol}) ${item.quotes.USD.price}
+                {item.name}
+                {/* ({item.symbol}) ${item.quotes.USD.price} */}
               </option>
             ))}
           </select>
