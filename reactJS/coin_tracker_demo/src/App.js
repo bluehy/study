@@ -6,16 +6,27 @@ function App() {
   useEffect(() => {
     fetch("https://api.coinpaprika.com/v1/tickers")
       .then((response) => response.json())
-      .then((json) => console.log(json))
+      // .then((json) => console.log(json))
       .then((json) => {
         setCoins(json);
         setLoading(false);
       });
   }, []);
+  console.log(coins);
   return (
     <div className="App">
       <h1>The Coins!</h1>
-      {loading ? <h2>Loading...</h2> : null}
+      {loading ? (
+        <h2>Loading...</h2>
+      ) : (
+        <ul>
+          {coins.map((item) => (
+            <li>
+              {item.name} ({item.symbol}): ${item.quotes.USD.price} USD
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
