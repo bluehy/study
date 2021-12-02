@@ -1,4 +1,5 @@
 # .gitignore
+/node_modules
 
 page_reference
 _nomadCoder
@@ -28,3 +29,4 @@ yarn.lock
 
 # # ignore all .pdf files in the doc/ directory
 # doc/**/*.pdf
+node_modules
