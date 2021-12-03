@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     getMovies();
   }, []);
-  // console.log(movies);
+  console.log(movies);
 
   return (
     <div>
@@ -29,8 +29,17 @@ function App() {
         <ul>
           {movies
             ? movies.map((movie) => (
-                <li key={movie.id}>
-                  {movie.title} 🌟{movie.rating}
+                <li key={movie.id} style={{ listStyle: "none" }}>
+                  <strong>{movie.title_long}</strong>
+                  <br />
+                  <a href={movie.url}>
+                    <img
+                      alt={movie.title}
+                      src={`${movie.medium_cover_image}`}
+                    />
+                  </a>
+                  <br />
+                  <p>🌟{movie.rating}</p>
                 </li>
               ))
             : null}
