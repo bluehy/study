@@ -30,13 +30,11 @@ function App() {
           {movies
             ? movies.map((movie) => (
                 <li key={movie.id} style={{ listStyle: "none" }}>
-                  <a href={movie.url}>
-                    <h3>{movie.title_long}</h3>
-                    <img
-                      alt={movie.title}
-                      src={`${movie.medium_cover_image}`}
-                    />
-                  </a>
+                  <h3>
+                    <a href={movie.url}>{movie.title_long}</a>
+                  </h3>
+                  <img alt={movie.title} src={`${movie.medium_cover_image}`} />
+
                   <ul>
                     {movie.genres.map((genre, index) => (
                       <li key={index}>{genre}</li>
