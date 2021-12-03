@@ -18,16 +18,21 @@ function App() {
   useEffect(() => {
     getMovies();
   }, []);
-  console.log(movies);
+  // console.log(movies);
 
   return (
     <div>
+      <h1>High Score Movie</h1>
       {loading ? (
-        <h1>Loading...</h1>
+        <h2>Loading...</h2>
       ) : (
         <ul>
           {movies
-            ? movies.map((movie) => <li key={movie.id}>{movie.title}</li>)
+            ? movies.map((movie) => (
+                <li key={movie.id}>
+                  {movie.title} 🌟{movie.rating}
+                </li>
+              ))
             : null}
         </ul>
       )}
