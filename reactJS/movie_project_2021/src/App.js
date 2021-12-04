@@ -26,25 +26,24 @@ function App() {
       {loading ? (
         <h2>Loading...</h2>
       ) : (
-        <ul>
+        <div>
           {movies
             ? movies.map((movie) => (
-                <li key={movie.id} style={{ listStyle: "none" }}>
+                <div key={movie.id} style={{ listStyle: "none" }}>
+                  <img alt={movie.title} src={`${movie.medium_cover_image}`} />
                   <h3>
                     <a href={movie.url}>{movie.title_long}</a>
                   </h3>
-                  <img alt={movie.title} src={`${movie.medium_cover_image}`} />
-
+                  <p>{movie.summary}</p>
                   <ul>
                     {movie.genres.map((genre, index) => (
                       <li key={index}>{genre}</li>
                     ))}
                   </ul>
-                  <p>🎬 {movie.summary}</p>
-                </li>
+                </div>
               ))
             : null}
-        </ul>
+        </div>
       )}
     </div>
   );
