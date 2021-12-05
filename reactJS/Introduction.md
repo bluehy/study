@@ -96,3 +96,15 @@ useEffect(effectCallback, [dependencyList])
 
 ⭐Cleanup Function
 : useEffect로 실행된 component가 파괴될 때 실행되는 함수. (자주 쓰이지는 않지만, 알아둘 필요가 있다.)
+
+---
+
+## React Router
+
+경로에 따라서 페이지를 전환해준다.
+
+- In CRA,
+
+```
+npm install react-router-dom
+```
