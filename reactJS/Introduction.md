@@ -108,3 +108,5 @@ useEffect(effectCallback, [dependencyList])
 ```
 npm install react-router-dom
 ```
+
+- component를 따로 만들고, App에서 router를 렌더하는 방식으로 페이지를 전환할 수 있게끔 구성한다.
