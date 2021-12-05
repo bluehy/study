@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Movie = ({ key, coverImg, title, url, title_long, summary, genres }) => {
   return (
     <div key={key} style={{ listStyle: "none" }}>
@@ -13,6 +15,15 @@ const Movie = ({ key, coverImg, title, url, title_long, summary, genres }) => {
       </ul>
     </div>
   );
+};
+
+Movie.propTypes = {
+  coverImg: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  title_long: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  genre: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Movie;
