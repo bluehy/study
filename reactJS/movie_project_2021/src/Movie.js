@@ -1,6 +1,6 @@
-const Movie = ({ id, coverImg, title, url, title_long, summary, genres }) => {
+const Movie = ({ key, coverImg, title, url, title_long, summary, genres }) => {
   return (
-    <div key={id} style={{ listStyle: "none" }}>
+    <div key={key} style={{ listStyle: "none" }}>
       <img alt={title} src={`${coverImg}`} />
       <h3>
         <a href={url}>{title_long}</a>
