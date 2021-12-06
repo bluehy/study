@@ -10,10 +10,16 @@ const Child = styled.div`
   background-color: teal;
 `;
 
+const Title = styled.h1`
+  color: white;
+`;
+
 function App() {
   return (
     <Parents>
-      <Child></Child>
+      <Child>
+        <Title>Title</Title>
+      </Child>
       <div></div>
     </Parents>
   );
