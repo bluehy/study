@@ -7,7 +7,11 @@ const Parents = styled.div`
 const Child = styled.div`
   width: 100px;
   height: 100px;
-  background-color: teal;
+  background-color: tomato;
+`;
+
+const ChildTwo = styled(Child)`
+  color: blue;
 `;
 
 const Title = styled.h1`
@@ -20,7 +24,7 @@ function App() {
       <Child>
         <Title>Title</Title>
       </Child>
-      <div></div>
+      <ChildTwo></ChildTwo>
     </Parents>
   );
 }
