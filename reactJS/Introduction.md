@@ -113,3 +113,13 @@ npm install react-router-dom
 
 - 6버젼 이상에서 Switch가 더이상 쓰이지 않도록 업데이트 되었다. Routes로 대체된다.
   [Upgrade all "Switch" elements to "Routes". React Router v6 introduces a Routes component that is kind of like Switch,...](https://reactrouter.com/docs/en/v6/getting-started/overview)
+
+---
+
+## Styled-components 설치
+
+React에서 style과 html을 지정한 component를 생성하여 활용할 수 있다.
+
+```
+npm i styled-components
+```
