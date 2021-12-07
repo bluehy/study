@@ -21,7 +21,7 @@ interface CircleProps {
 }
 
 const Circle = ({ bgColor, borderColor }: CircleProps) => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState<number | string>(0);
   setValue(2);
   return <Container bgColor={bgColor} borderColor={borderColor ?? bgColor} />;
 };
