@@ -8,6 +8,7 @@ const Container = styled.div<ContainerProps>`
   width: 200px;
   height: 200px;
   background-color: ${(props) => props.bgColor};
+  border-radius: 100px;
 `;
 
 // const x = (a: number, b: number) => a + b;
