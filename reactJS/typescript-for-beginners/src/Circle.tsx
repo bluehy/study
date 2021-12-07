@@ -14,6 +14,7 @@ const Container = styled.div<ContainerProps>`
 // const x = (a: number, b: number) => a + b;
 interface CircleProps {
   bgColor: string;
+  borderColor?: string;
 }
 
 const Circle = ({ bgColor }: CircleProps) => {
