@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface ContainerProps {
   bgColor: string;
+  borderColor: string;
 }
 
 const Container = styled.div<ContainerProps>`
@@ -9,6 +10,7 @@ const Container = styled.div<ContainerProps>`
   height: 200px;
   background-color: ${(props) => props.bgColor};
   border-radius: 100px;
+  border: 1px solid ${(props) => props.borderColor};
 `;
 
 // const x = (a: number, b: number) => a + b;
@@ -17,8 +19,8 @@ interface CircleProps {
   borderColor?: string;
 }
 
-const Circle = ({ bgColor }: CircleProps) => {
-  return <Container bgColor={bgColor} />;
+const Circle = ({ bgColor, borderColor }: CircleProps) => {
+  return <Container bgColor={bgColor} borderColor={borderColor ?? bgColor} />;
 };
 
 export default Circle;
