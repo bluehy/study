@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Movie = ({ key, coverImg, title, url, title_long, summary, genres }) => {
   return (
     <div key={key} style={{ listStyle: "none" }}>
       <img alt={title} src={`${coverImg}`} />
       <h3>
-        <a href={url}>{title_long}</a>
+        <Link to="/movie">{title_long}</Link>
       </h3>
       <p>{summary}</p>
       <ul>
