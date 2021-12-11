@@ -6,7 +6,7 @@ const Movie = ({ key, coverImg, title, url, title_long, summary, genres }) => {
     <div key={key} style={{ listStyle: "none" }}>
       <img alt={title} src={`${coverImg}`} />
       <h3>
-        <Link to="/movie">{title_long}</Link>
+        <Link to="/movie/121212">{title_long}</Link>
       </h3>
       <p>{summary}</p>
       <ul>

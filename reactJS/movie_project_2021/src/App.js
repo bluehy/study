@@ -6,7 +6,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/movie" element={<Detail />} />
+        <Route path="/movie/:id" element={<Detail />} />
         <Route exact path="/" element={<Home />} /* {Component} */ />
       </Routes>
     </Router>
