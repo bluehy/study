@@ -123,3 +123,18 @@ React에서 style과 html을 지정한 component를 생성하여 활용할 수 �
 ```
 npm i styled-components
 ```
+
+---
+
+## gh-pages :: Publishing
+
+제작한 페이지를 deploy할 수 있게 해주는 기능.
+
+```
+//gh-pages설치
+npm i gh-pages
+
+//코드 최적화 실행: build
+npm run build
+
+```
