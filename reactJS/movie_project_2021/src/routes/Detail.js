@@ -27,8 +27,12 @@ const Detail = () => {
         <h2>Loading...</h2>
       ) : (
         <div>
-          <p>Detail Page about movie no.{id}</p>
-          <h1>{movie.title}</h1>
+          {movie ? (
+            <section>
+              <p>Detail Page about movie no.{id}</p>
+              <h1>{movie.title}</h1>
+            </section>
+          ) : null}
         </div>
       )}
     </div>
