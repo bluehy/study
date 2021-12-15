@@ -19,7 +19,9 @@ const Dummy = ({ text, active = false }: DummyProps) => {
   return <Header>{text}</Header>;
 };
 
-const onClick = (event: React.FormEvent<HTMLButtonElement>) => {};
+const onClick = (event: React.FormEvent<HTMLButtonElement>) => {
+  event.preventDefault();
+};
 
 function App() {
   const [value, setValue] = useState("");
