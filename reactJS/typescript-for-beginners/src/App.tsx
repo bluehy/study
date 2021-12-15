@@ -19,6 +19,8 @@ const Dummy = ({ text, active = false }: DummyProps) => {
   return <Header>{text}</Header>;
 };
 
+const onClick = (event: React.FormEvent<HTMLButtonElement>) => {};
+
 function App() {
   const [value, setValue] = useState("");
   const onChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -37,6 +39,7 @@ function App() {
       <Container>
         {/* <Header>Protected</Header> */}
         <Dummy active text="Hello neighbor" />
+        <button onClick={onClick}>click me</button>
       </Container>
       <form onSubmit={onSubmit}>
         <input
