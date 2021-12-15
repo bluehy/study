@@ -10,6 +10,14 @@ const Header = styled.h1`
   color: ${(props) => props.theme.textColor};
 `;
 
+interface DummyProps {
+  text: string;
+}
+
+const Dummy = ({ text }: DummyProps) => {
+  return <h1>{text}</h1>;
+};
+
 function App() {
   const [value, setValue] = useState("");
   const onChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -27,6 +35,7 @@ function App() {
     <div>
       <Container>
         <Header>Protected</Header>
+        <Dummy text="Hello neighbor" />
       </Container>
       <form onSubmit={onSubmit}>
         <input
