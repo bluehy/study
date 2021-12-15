@@ -12,10 +12,11 @@ const Header = styled.h1`
 
 interface DummyProps {
   text: string;
+  otherThingHere?: boolean;
 }
 
-const Dummy = ({ text }: DummyProps) => {
-  return <h1>{text}</h1>;
+const Dummy = ({ text, otherThingHere }: DummyProps) => {
+  return <Header>{text}</Header>;
 };
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
   return (
     <div>
       <Container>
-        <Header>Protected</Header>
+        {/* <Header>Protected</Header> */}
         <Dummy text="Hello neighbor" />
       </Container>
       <form onSubmit={onSubmit}>
