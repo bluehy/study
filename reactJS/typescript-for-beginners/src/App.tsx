@@ -35,6 +35,7 @@ function App() {
   };
   const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
+    // [syntheticEvent](https://ko.reactjs.org/docs/events.html)
   };
   return (
     <div>
