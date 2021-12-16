@@ -19,10 +19,7 @@ const Dummy = ({ text, active = false }: DummyProps) => {
   return <Header>{text}</Header>;
 };
 
-const onClick = (event: React.FormEvent<HTMLButtonElement>) => {
-  event.preventDefault();
-};
-
+// ++++++++++++++++++++++++++++++++++++++++
 function App() {
   const [value, setValue] = useState("");
   const onChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -35,6 +32,9 @@ function App() {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(`hello ${value}`);
+  };
+  const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
   };
   return (
     <div>
