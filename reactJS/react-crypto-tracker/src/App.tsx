@@ -3,7 +3,9 @@ import { createGlobalStyle } from "styled-components";
 import Router from "./Router";
 
 const GlobalStyle = createGlobalStyle`
-  html, body, div, span, applet, object, iframe,
+@import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
+
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -34,6 +36,9 @@ footer, header, hgroup, main, menu, nav, section {
 }
 body {
   line-height: 1;
+  font-family: 'Oooh Baby', cursive;
+  background-color: ${(props) => props.theme.bgColor};
+  color: ${(props) => props.theme.textColor}
 }
 menu, ol, ul {
   list-style: none;
@@ -49,6 +54,12 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+*{
+  box-sizing:border-box;
+}
+a{
+  text-decoration: none;
 }
 `;
 
