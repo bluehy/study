@@ -4,16 +4,17 @@ import Router from "./Router";
 
 const GlobalStyle = createGlobalStyle`
   body{
-    color: #333;
+    color: orange;
   }
 `;
 
 function App() {
-  return;
-  <>
-    <GlobalStyle />
-    <Router />;
-  </>;
+  return (
+    <>
+      <GlobalStyle />
+      <Router />
+    </>
+  );
 }
 
 export default App;
