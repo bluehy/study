@@ -32,9 +32,16 @@ const coins = [
 
 const Container = styled.div``;
 
-const Header = styled.header``;
+const Header = styled.header`
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-const CoinsList = styled.ul``;
+const CoinsList = styled.ul`
+  padding: 0px 20px;
+`;
 
 const Coin = styled.li``;
 
