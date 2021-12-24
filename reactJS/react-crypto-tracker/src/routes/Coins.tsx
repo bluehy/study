@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const coins = [
   {
@@ -43,7 +44,13 @@ const CoinsList = styled.ul`
   padding: 0px 20px;
 `;
 
-const Coin = styled.li``;
+const Coin = styled.li`
+  background-color: white;
+  color: ${(props) => props.theme.bgColor};
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+`;
 
 const Title = styled.h1`
   color: ${(props) => props.theme.accentColor};
@@ -58,7 +65,9 @@ const Coins = () => {
       </Header>
       <CoinsList>
         {coins.map((coin) => (
-          <Coin key={coin.id}>{coin.name}</Coin>
+          <Coin key={coin.id}>
+            <Link to={`/${coin.id}`}>{coin.name}&rarr;</Link>
+          </Coin>
         ))}
       </CoinsList>
     </Container>
