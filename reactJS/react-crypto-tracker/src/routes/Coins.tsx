@@ -53,7 +53,13 @@ interface CoinInterface {
 
 const Coins = () => {
   const [coins, setCoins] = useState<CoinInterface[]>([]);
-
+  useEffect(() => {
+    (async () => {
+      const response = await fetch("https://api.coinpaprika.com/v1/coins");
+      const json = await response.json();
+      setCoins(json);
+    })();
+  }, []);
   return (
     <Container>
       <Header>
