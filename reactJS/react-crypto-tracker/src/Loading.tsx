@@ -1,5 +1,11 @@
+import styled from "styled-components";
+
+const Loader = styled.h2`
+  text-align: center;
+`;
+
 const Loading = () => {
-  return <h2>Loading...</h2>;
+  return <Loader>Loading...</Loader>;
 };
 
 export default Loading;
