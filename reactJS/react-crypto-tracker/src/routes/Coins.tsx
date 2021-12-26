@@ -28,13 +28,20 @@ const Coin = styled.li`
   a {
     padding: 20px;
     transition: color 0.2s ease-in-out;
-    display: block;
+    display: flex;
+    align-items: center;
   }
   &:hover {
     a {
       color: ${(props) => props.theme.accentColor};
     }
   }
+`;
+
+const Img = styled.img`
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
 `;
 
 const Title = styled.h1`
@@ -74,7 +81,12 @@ const Coins = () => {
         <CoinsList>
           {coins.map((coin) => (
             <Coin key={coin.id}>
-              <Link to={`/${coin.id}`}>{coin.name}&rarr;</Link>
+              <Link to={`/${coin.id}`}>
+                <Img
+                  src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
+                />
+                {coin.name}&rarr;
+              </Link>
             </Coin>
           ))}
         </CoinsList>
