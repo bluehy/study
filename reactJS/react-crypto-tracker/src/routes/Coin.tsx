@@ -35,14 +35,14 @@ const Coin = () => {
   const { coinId } = useParams() as unknown as RouteParams;
   console.log(coinId);
 
-  const location = useLocation();
   // https://typescript.tv/react/upgrade-to-react-router-v6/
-  const name = location.state as RouterState;
+  const { name } = useLocation().state as RouterState;
+  console.log(name);
 
   return (
     <Container>
       <Header>
-        <Title>{coinId}</Title>
+        <Title>{name}</Title>
       </Header>
       {loading ? <Loading /> : null}
     </Container>
