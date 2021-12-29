@@ -61,7 +61,7 @@ const Coin = () => {
       <Header>
         <Title>{name}</Title>
       </Header>
-      {loading ? <Loading /> : <span></span>>}
+      {loading ? <Loading /> : null}
     </Container>
   );
 };
