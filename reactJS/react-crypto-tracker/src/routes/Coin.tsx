@@ -81,8 +81,8 @@ const Coin = () => {
   const { name } = useLocation().state as RouterState;
   console.log(name);
 
-  const [info, setInfo] = useState({});
-  const [priceInfo, setPriceInfo] = useState({});
+  const [info, setInfo] = useState<IInfoData>();
+  const [priceInfo, setPriceInfo] = useState<IPriceData>();
   useEffect(() => {
     (async () => {
       // const response = await fetch(`https://api.coinpaprika.com/v1/coins/${coinId}`);
@@ -105,7 +105,7 @@ const Coin = () => {
       <Header>
         <Title>{name}</Title>
       </Header>
-      {loading ? <Loading /> : null}
+      {loading ? <Loading /> : `${info?.rank} ${priceInfo?.id}`}
     </Container>
   );
 };
