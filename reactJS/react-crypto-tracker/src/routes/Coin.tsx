@@ -29,9 +29,45 @@ interface RouterState {
   name: string;
 }
 
-interface IInfoData {}
+interface IInfoData {
+  id;
+  name;
+  symbol;
+  rank;
+  is_new;
+  is_active;
+  type;
+  tags;
+  team;
+  description;
+  message;
+  open_source;
+  started_at;
+  development_status;
+  hardware_wallet;
+  proof_type;
+  org_structure;
+  hash_algorithm;
+  links;
+  links_extended;
+  whitepaper;
+  first_data_at;
+  last_data_at;
+}
 
-interface IPriceData {}
+interface IPriceData {
+  id;
+  name;
+  symbol;
+  rank;
+  circulating_supply;
+  total_supply;
+  max_supply;
+  beta_value;
+  first_data_at;
+  last_updated;
+  quotes;
+}
 
 const Coin = () => {
   const [loading, setLoading] = useState(true);
