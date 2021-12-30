@@ -29,6 +29,10 @@ interface RouterState {
   name: string;
 }
 
+interface IInfoData {}
+
+interface IPriceData {}
+
 const Coin = () => {
   const [loading, setLoading] = useState(true);
   // const { coinId } = useParams<{ coinId: string }>();
