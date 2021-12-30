@@ -30,29 +30,29 @@ interface RouterState {
 }
 
 interface IInfoData {
-  id;
-  name;
-  symbol;
-  rank;
-  is_new;
-  is_active;
-  type;
-  tags;
-  team;
-  description;
-  message;
-  open_source;
-  started_at;
-  development_status;
-  hardware_wallet;
-  proof_type;
-  org_structure;
-  hash_algorithm;
-  links;
-  links_extended;
-  whitepaper;
-  first_data_at;
-  last_data_at;
+  id: string;
+  name: string;
+  symbol: string;
+  rank: number;
+  is_new: boolean;
+  is_active: boolean;
+  type: string;
+  tags: object;
+  team: object;
+  description: string;
+  message: string;
+  open_source: boolean;
+  started_at: string;
+  development_status: string;
+  hardware_wallet: boolean;
+  proof_type: string;
+  org_structure: string;
+  hash_algorithm: string;
+  links: object;
+  links_extended: object;
+  whitepaper: object;
+  first_data_at: string;
+  last_data_at: string;
 }
 
 interface IPriceData {
