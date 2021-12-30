@@ -29,6 +29,13 @@ interface RouterState {
   name: string;
 }
 
+interface ITag {
+  coin_counter: number;
+  ico_counter: number;
+  id: string;
+  name: string;
+}
+
 interface IInfoData {
   id: string;
   name: string;
@@ -37,8 +44,7 @@ interface IInfoData {
   is_new: boolean;
   is_active: boolean;
   type: string;
-  tags: object;
-  team: object;
+  tags: ITag[];
   description: string;
   message: string;
   open_source: boolean;
@@ -48,25 +54,21 @@ interface IInfoData {
   proof_type: string;
   org_structure: string;
   hash_algorithm: string;
-  links: object;
-  links_extended: object;
-  whitepaper: object;
   first_data_at: string;
   last_data_at: string;
 }
 
 interface IPriceData {
-  id;
-  name;
-  symbol;
-  rank;
-  circulating_supply;
-  total_supply;
-  max_supply;
-  beta_value;
-  first_data_at;
-  last_updated;
-  quotes;
+  id: string;
+  name: string;
+  symbol: string;
+  rank: number;
+  circulating_supply: number;
+  total_supply: number;
+  max_supply: number;
+  beta_value: number;
+  first_data_at: string;
+  last_updated: string;
 }
 
 const Coin = () => {
