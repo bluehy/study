@@ -21,6 +21,28 @@ const Title = styled.h1`
   font-size: 32px;
 `;
 
+const Overview = styled.div`
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+`;
+const OverviewItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  span:first-child {
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+`;
+const Description = styled.p`
+  margin: 20px 0px;
+`;
+
 interface RouteParams {
   coinId: string;
 }
@@ -120,7 +142,8 @@ const Coin = () => {
       setPriceInfo(priceData);
       setLoading(false);
     })();
-  }, []);
+  }, [coinId]);
+  // coinId는 URL에 위치해서 절대 변하지 않는다.
   return (
     <Container>
       <Header>
@@ -129,7 +152,33 @@ const Coin = () => {
       {loading ? (
         <Loading />
       ) : (
-        `${info?.rank} ${priceInfo?.id} $${priceInfo?.quotes.USD.ath_price}`
+        <>
+          <Overview>
+            <OverviewItem>
+              <p>Rank:</p>
+              <p>{info?.rank}</p>
+            </OverviewItem>
+            <OverviewItem>
+              <p>Symbol:</p>
+              <p>{info?.symbol}</p>
+            </OverviewItem>
+            <OverviewItem>
+              <p>Open Source:</p>
+              <p>{info?.open_source ? "Yes" : "No"}</p>
+            </OverviewItem>
+          </Overview>
+          <Description>{info?.description}</Description>
+          <Overview>
+            <OverviewItem>
+              <span>Total Suply:</span>
+              <span>{priceInfo?.total_supply}</span>
+            </OverviewItem>
+            <OverviewItem>
+              <span>Max Supply:</span>
+              <span>{priceInfo?.max_supply}</span>
+            </OverviewItem>
+          </Overview>
+        </>
       )}
     </Container>
   );
