@@ -34,7 +34,7 @@ const OverviewItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  span:first-child {
+  p:first-child {
     font-size: 10px;
     font-weight: 400;
     text-transform: uppercase;
@@ -180,6 +180,8 @@ const Coin = () => {
               <span>{priceInfo?.max_supply}</span>
             </OverviewItem>
           </Overview>
+
+          {/* nested Routes */}
           <Routes>
             <Route path={`/${coinId}/price`} element={<Price />} />
             <Route path={`/${coinId}/price`} element={<Chart />} />
