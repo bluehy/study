@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, useLocation, useParams } from "react-router-dom";
+import {
+  Link,
+  Routes,
+  Route,
+  useLocation,
+  useParams,
+  useRouteMatch,
+} from "react-router-dom";
 import styled from "styled-components";
 import Loading from "../Loading";
 import Chart from "./Chart";
