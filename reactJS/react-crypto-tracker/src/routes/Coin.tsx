@@ -5,12 +5,16 @@ import {
   Route,
   useLocation,
   useParams,
-  useRouteMatch,
+  useMatch,
+  // useRouteMatch -> useMatch
+  // https://reactrouter.com/docs/en/v6/api
 } from "react-router-dom";
 import styled from "styled-components";
 import Loading from "../Loading";
 import Chart from "./Chart";
 import Price from "./Price";
+
+// style
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -58,6 +62,23 @@ const Tabs = styled.div`
   margin: 25px 0px;
   gap: 10px;
 `;
+
+const Tab = styled.span<{ isActive: boolean }>`
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 7px 0px;
+  border-radius: 10px;
+  color: ${(props) =>
+    props.isActive ? props.theme.accentColor : props.theme.textColor};
+  a {
+    display: block;
+  }
+`;
+
+// interface
 
 interface RouteParams {
   coinId: string;
@@ -130,6 +151,8 @@ interface IPriceData {
   };
 }
 
+// render
+
 const Coin = () => {
   const [loading, setLoading] = useState(true);
   // const { coinId } = useParams<{ coinId: string }>();
@@ -142,6 +165,10 @@ const Coin = () => {
 
   const [info, setInfo] = useState<IInfoData>();
   const [priceInfo, setPriceInfo] = useState<IPriceData>();
+
+  const priceMatch = useMatch("/:coinId/price");
+  const chartMatch = useMatch("/:coinId/chart");
+
   useEffect(() => {
     (async () => {
       // const response = await fetch(`https://api.coinpaprika.com/v1/coins/${coinId}`);
@@ -160,6 +187,7 @@ const Coin = () => {
     })();
   }, [coinId]);
   // coinId는 URL에 위치해서 절대 변하지 않는다.
+
   return (
     <Container>
       <Header>
@@ -195,10 +223,19 @@ const Coin = () => {
             </OverviewItem>
           </Overview>
 
+          <Tabs>
+            <Tab isActive={chartMatch !== null}>
+              <Link to={`/${coinId}/chart`}>Chart</Link>
+            </Tab>
+            <Tab isActive={priceMatch !== null}>
+              <Link to={`/${coinId}/chart`}>Price</Link>
+            </Tab>
+          </Tabs>
+
           {/* nested Routes */}
           <Routes>
-            <Route path={`/${coinId}/price`} element={<Price />} />
-            <Route path={`/${coinId}/price`} element={<Chart />} />
+            <Route path={`/:coinId/price`} element={<Price />} />
+            <Route path={`/:coinId/chart`} element={<Chart />} />
           </Routes>
         </>
       )}
