@@ -191,7 +191,7 @@ const Coin = () => {
   return (
     <Container>
       <Header>
-        <Title>{name}</Title>
+        <Title>{name ? name : loading ? <Loading /> : name}</Title>
       </Header>
       {loading ? (
         <Loading />
