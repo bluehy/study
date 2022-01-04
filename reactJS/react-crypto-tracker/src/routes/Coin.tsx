@@ -12,8 +12,6 @@ import {
 } from "react-router-dom";
 import styled from "styled-components";
 import Loading from "../Loading";
-import Chart from "./Chart";
-import Price from "./Price";
 
 // style
 
