@@ -242,10 +242,10 @@ const Coin = () => {
 
           {/* nested Routes */}
           {/* using tab */}
-          <Routes>
+          {/* <Routes>{
             <Route path={`/:coinId/price`} element={<Price />} />
             <Route path={`/:coinId/chart`} element={<Chart />} />
-          </Routes>
+          </Routes>} */}
         </>
       )}
     </Container>
