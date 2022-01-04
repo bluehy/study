@@ -161,8 +161,8 @@ const Coin = () => {
   console.log(coinId);
 
   // https://typescript.tv/react/upgrade-to-react-router-v6/
-  const { name } = useLocation().state as RouterState;
-  console.log(name);
+  // const { name } = useLocation().state as RouterState;
+  // console.log(name);
 
   const [info, setInfo] = useState<IInfoData>();
   const [priceInfo, setPriceInfo] = useState<IPriceData>();
@@ -192,7 +192,8 @@ const Coin = () => {
   return (
     <Container>
       <Header>
-        <Title>{name ? name : loading ? <Loading /> : name}</Title>
+        {/* <Title>{name ? name : loading ? "loading.." : name}</Title> */}
+        <Title>{coinId}</Title>
       </Header>
       {loading ? (
         <Loading />
@@ -215,7 +216,7 @@ const Coin = () => {
           <Description>{info?.description}</Description>
           <Overview>
             <OverviewItem>
-              <span>Total Suply:</span>
+              <span>Total Supply:</span>
               <span>{priceInfo?.total_supply}</span>
             </OverviewItem>
             <OverviewItem>
@@ -233,7 +234,10 @@ const Coin = () => {
             </Tab>
           </Tabs>
 
+          <Outlet />
+
           {/* nested Routes */}
+          {/* using tab */}
           <Routes>
             <Route path={`/:coinId/price`} element={<Price />} />
             <Route path={`/:coinId/chart`} element={<Chart />} />
