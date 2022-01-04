@@ -86,7 +86,9 @@ interface RouteParams {
 }
 
 interface RouterState {
-  name: string;
+  state: {
+    name: string;
+  };
 }
 
 interface ITag {
@@ -161,8 +163,8 @@ const Coin = () => {
   console.log(coinId);
 
   // https://typescript.tv/react/upgrade-to-react-router-v6/
-  // const { name } = useLocation().state as RouterState;
-  // console.log(name);
+  const { state } = useLocation() as RouterState;
+  console.log(`state :  ${state?.name}`);
 
   const [info, setInfo] = useState<IInfoData>();
   const [priceInfo, setPriceInfo] = useState<IPriceData>();
@@ -192,8 +194,10 @@ const Coin = () => {
   return (
     <Container>
       <Header>
-        {/* <Title>{name ? name : loading ? "loading.." : name}</Title> */}
-        <Title>{coinId}</Title>
+        <Title>
+          {state?.name ? state?.name : loading ? "loading..." : info?.name}
+        </Title>
+        {/* <Title>{coinId}</Title> */}
       </Header>
       {loading ? (
         <Loading />
@@ -230,7 +234,7 @@ const Coin = () => {
               <Link to={`/${coinId}/chart`}>Chart</Link>
             </Tab>
             <Tab isActive={priceMatch !== null}>
-              <Link to={`/${coinId}/chart`}>Price</Link>
+              <Link to={`/${coinId}/price`}>Price</Link>
             </Tab>
           </Tabs>
 
