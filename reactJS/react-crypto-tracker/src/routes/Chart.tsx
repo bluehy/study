@@ -1,11 +1,15 @@
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-const Chart = () => {
-  // const params = useParams();
+// interface CharProps {
+//   coinId: string;
+// }
+
+const Chart = (/* { coinId }: CharProps */) => {
+  const params = useParams();
   // params = {coinId: "coinId"}
   //
-  // Coin을 통해 props를 전달받도록 작성.
-  return <h1>Chart</h1>;
+  // Coin의 Route를 사용할 경우, Coin을 통해 props를 전달받도록 작성할 수 있음.
+  return <h1>Chart about {params.coinId}</h1>;
 };
 
 export default Chart;
