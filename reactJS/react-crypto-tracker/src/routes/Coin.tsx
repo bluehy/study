@@ -13,6 +13,9 @@ import {
 import styled from "styled-components";
 import Loading from "../Loading";
 
+import Price from "./Price";
+import Chart from "./Chart";
+
 // style
 
 const Container = styled.div`
@@ -236,14 +239,15 @@ const Coin = () => {
             </Tab>
           </Tabs>
 
-          <Outlet />
-
           {/* nested Routes */}
           {/* using tab */}
-          {/* <Routes>{
+
+          <Routes>
             <Route path={`/:coinId/price`} element={<Price />} />
             <Route path={`/:coinId/chart`} element={<Chart />} />
-          </Routes>} */}
+          </Routes>
+
+          <Outlet />
         </>
       )}
     </Container>
