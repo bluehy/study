@@ -14,12 +14,12 @@ const Chart = (/* { coinId }: CharProps */) => {
   const startDate = endDate - 60 * 60 * 24 * 7;
   useEffect(() => {
     (async () => {
-      const apiData = await (
+      const chartData = await (
         await fetch(
           `https://api.coinpaprika.com/v1/coins/${params.coinId}/ohlcv/historical?start=${startDate}&end=${endDate}`
         )
       ).json();
-      console.log(apiData);
+      console.log(chartData);
     })();
   }, []);
 
