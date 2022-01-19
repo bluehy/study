@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Loading from "../Loading";
+
+// React Query import
 import { useQuery } from "react-query";
 import { fetchCoins } from "./api";
 
