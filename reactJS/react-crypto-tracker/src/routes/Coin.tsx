@@ -16,6 +16,10 @@ import Loading from "../Loading";
 import Price from "./Price";
 import Chart from "./Chart";
 
+// React Query import
+import { useQuery } from "react-query";
+import { fetchCoinInfo, fetchCoinTickers } from "./api";
+
 // style
 
 const Container = styled.div`
@@ -158,7 +162,6 @@ interface IPriceData {
 // render
 
 const Coin = () => {
-  const [loading, setLoading] = useState(true);
   // const { coinId } = useParams<{ coinId: string }>();
   const { coinId } = useParams() as unknown as RouteParams;
   console.log(coinId);
@@ -167,11 +170,17 @@ const Coin = () => {
   const { state } = useLocation() as RouterState;
   console.log(`state :  ${state?.name}`);
 
-  const [info, setInfo] = useState<IInfoData>();
-  const [priceInfo, setPriceInfo] = useState<IPriceData>();
-
   const priceMatch = useMatch("/:coinId/price");
   const chartMatch = useMatch("/:coinId/chart");
+
+  // React Query : API_ useQuery hooks
+  const {} = useQuery(["info", coinId], () => fetchCoinInfo(coinId));
+  const {} = useQuery(["tickers", coinId], () => fetchCoinTickers(coinId));
+  // unique react query key를 주기 위한 방법.
+
+  /* const [loading, setLoading] = useState(true);
+  const [info, setInfo] = useState<IInfoData>();
+  const [priceInfo, setPriceInfo] = useState<IPriceData>();
 
   useEffect(() => {
     (async () => {
@@ -189,7 +198,7 @@ const Coin = () => {
       setPriceInfo(priceData);
       setLoading(false);
     })();
-  }, [coinId]);
+  }, [coinId]); */
   // coinId는 URL에 위치해서 절대 변하지 않는다.
 
   return (
