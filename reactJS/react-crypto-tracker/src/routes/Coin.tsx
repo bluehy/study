@@ -174,8 +174,14 @@ const Coin = () => {
   const chartMatch = useMatch("/:coinId/chart");
 
   // React Query : API_ useQuery hooks
-  const {} = useQuery(["info", coinId], () => fetchCoinInfo(coinId));
-  const {} = useQuery(["tickers", coinId], () => fetchCoinTickers(coinId));
+  const { isLoading: infoLoading, data: infoData } = useQuery(
+    ["info", coinId],
+    () => fetchCoinInfo(coinId)
+  );
+  const { isLoading: tickersLoading, data: tickersData } = useQuery(
+    ["tickers", coinId],
+    () => fetchCoinTickers(coinId)
+  );
   // unique react query key를 주기 위한 방법.
 
   /* const [loading, setLoading] = useState(true);
