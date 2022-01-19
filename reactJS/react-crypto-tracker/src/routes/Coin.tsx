@@ -174,11 +174,11 @@ const Coin = () => {
   const chartMatch = useMatch("/:coinId/chart");
 
   // React Query : API_ useQuery hooks
-  const { isLoading: infoLoading, data: infoData } = useQuery(
+  const { isLoading: infoLoading, data: infoData } = useQuery<IInfoData>(
     ["info", coinId],
     () => fetchCoinInfo(coinId)
   );
-  const { isLoading: tickersLoading, data: tickersData } = useQuery(
+  const { isLoading: tickersLoading, data: tickersData } = useQuery<IPriceData>(
     ["tickers", coinId],
     () => fetchCoinTickers(coinId)
   );
@@ -207,11 +207,12 @@ const Coin = () => {
   }, [coinId]); */
   // coinId는 URL에 위치해서 절대 변하지 않는다.
 
+  const loading = infoLoading || tickersLoading;
   return (
     <Container>
       <Header>
         <Title>
-          {state?.name ? state?.name : loading ? "loading..." : info?.name}
+          {state?.name ? state?.name : loading ? "loading..." : infoData?.name}
         </Title>
         {/* <Title>{coinId}</Title> */}
       </Header>
@@ -222,26 +223,26 @@ const Coin = () => {
           <Overview>
             <OverviewItem>
               <p>Rank:</p>
-              <p>{info?.rank}</p>
+              <p>{infoData?.rank}</p>
             </OverviewItem>
             <OverviewItem>
               <p>Symbol:</p>
-              <p>{info?.symbol}</p>
+              <p>{infoData?.symbol}</p>
             </OverviewItem>
             <OverviewItem>
               <p>Open Source:</p>
-              <p>{info?.open_source ? "Yes" : "No"}</p>
+              <p>{infoData?.open_source ? "Yes" : "No"}</p>
             </OverviewItem>
           </Overview>
-          <Description>{info?.description}</Description>
+          <Description>{infoData?.description}</Description>
           <Overview>
             <OverviewItem>
               <span>Total Supply:</span>
-              <span>{priceInfo?.total_supply}</span>
+              <span>{tickersData?.total_supply}</span>
             </OverviewItem>
             <OverviewItem>
               <span>Max Supply:</span>
-              <span>{priceInfo?.max_supply}</span>
+              <span>{tickersData?.max_supply}</span>
             </OverviewItem>
           </Overview>
 
