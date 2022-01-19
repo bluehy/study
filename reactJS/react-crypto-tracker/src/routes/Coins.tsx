@@ -62,6 +62,7 @@ interface ICoin {
 }
 
 const Coins = () => {
+  // React Query : API fetcher function
   const { isLoading, data } = useQuery<ICoin[]>("allCoins", fetchCoins);
   /* const [coins, setCoins] = useState<ICoin[]>([]);
   const [loading, setLoading] = useState(true);
